@@ -3,8 +3,8 @@ open (datos,"informacion.txt");
 @informacion=<datos>;
 close (datos);
 #de cada linea en @informacion separa las cadenas separadas por una coma
-foreach (@informacion){
-	@oraciones = split(/\,+/, $informacion[0]);
+foreach $inf (@informacion){
+	@oraciones = split(/\,+/, $inf);
 }
 #hash que maneja la información del estudiante
 %estudiante=(nombre,"",estudio,"",direccion,"inicia");
