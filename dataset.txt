@@ -62,4 +62,5 @@ Mi nombre es Alejandro Benitez, soy profesor del área de Ciencias Computacional
  Estudié en el Colegio Cayetano Tarruell, actualmente estudio Ingeniería en Computación en la ESPOL.
  Mi correo electrónico es jashdka@espol.edu.ec y mi número de teléfono es 0987777777.
  Me gusta el futbol, soy barcelonista. Tambien me gustan los videojuegos.
-
+ 
+ Mi nombre es Marcelo Sánchez, tengo 23 años, mido 1,67, peso 73 kg, vivo en la alborada 5ta etapa, estudio Ingeniería en Ciencias Computacionales Orientación Sistemas de Información en ESPOL, mi correo es madasanc@espol.edu.ec, mi número telefónico es el 0984347577, nací en la ciudad de Guayaquil, en mis ratos libres me gusta correr y leer.
