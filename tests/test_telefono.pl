@@ -17,8 +17,18 @@ foreach $info(@parrafos){
 }
  
 foreach $telf (@oraciones){
-	#Encuentra los telefonos5
-	if ($telf =~ /(celular es |celular |tel[eé]fono es |tel[eé]fonico es |tel[eé]fonico es el )([0][9][0-9]{8}|"+593 "[0-9]{9})*/){
+	#Encuentra los telefonos en formato internacional
+	if ($telf =~ /([cC]elular al )([+][5][9][3][ ][0-9]{8})*/){
+		print sal "Telefono: ".$2."\n";
+	}
+	
+	#Encuentra los telefonos celulares
+	if ($telf =~ /([cC]elular es |[cC]elular al |[cC]elular |[tT]el[ée]fono es |[tT]el[ée]fono |[tT]elef[óo]nico es el )([0-9]{10})*/){
+		print sal "Telefono: ".$2."\n";
+	}
+	
+	#Encuentra los telefonos fijos
+	if ($telf =~ /([tT]el[ée]fono es )([2-9]{7})*/){
 		print sal "Telefono: ".$2."\n";
 	}
 	
