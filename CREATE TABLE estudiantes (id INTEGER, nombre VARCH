@@ -1,0 +1,1 @@
+CREATE TABLE estudiantes (id INTEGER, nombre VARCHAR(50), edad VARCHAR(10), estatura VARCHAR(10), peso VARCHAR(10), correo VARCHAR(50), lugarnacimiento VARCHAR(15), estadocivil VARCHAR(10), telefono VARCHAR(15),  universidad VARCHAR(50), carrera VARCHAR(50));
