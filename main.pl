@@ -10,36 +10,19 @@ open (sal,">salida.txt");
 	foreach $inf(@informacion){
 		if (length($inf)>2) {
 			push(@parrafos,$inf);
-		}
+			#funciones para buscar información
+			buscaNombre($inf);
+			buscaEdad($inf);
+			buscarEstudios($inf);
+			buscarEstatura($inf);
+			buscarPeso($inf);
+			buscarTelefono($inf);
+			buscarEstadoCivil($inf);
+			buscarCiudadNatal($inf);
+			
+			print sal "\n\n";
 	}
-	#numero de lineas a analizar
-	$numParrafos=scalar(@parrafos);
-
-	#analisis de las lineas o parrafos 
-	for ($var = 0; $var < $numParrafos; $var++) {
-		
-				#separa las oraciones dentro de los parrafos. los separa por medio de comas
-		push(@oraciones,split(/\,+/, $parrafos[$var])); 
-		
-		$numOraciones=scalar(@oraciones);
-		for (my $var = 0; $var < $numOraciones; $var++) {
-			
-			buscaNombre($oraciones[$var]);
-			buscarEstadoCivil($oraciones[$var]);
-			buscaEstatura($oraciones[$var]);
-			buscaPeso($oraciones[$var]);
-			
-			if($oraciones[$var]=~/[Ii]ng\./){
-				$oraciones[$var]="$oraciones[$var]"."$oraciones[$var+1]";
-				
-			}
-			
-			
-		}
-		print sal "\n\n";
-		undef(@oraciones);
 	}
-	
 close (sal);
 
 #Funcion que busca los nombres en el dataset
@@ -59,13 +42,12 @@ sub buscaNombre {
 #Funcion que busca las edades en el dataset
 sub buscaEdad {
 	$nom=$_[0];
-
 	if ($nom =~ /[tT]engo ([0-9\s]+)* [aA]ños/) {
 		print sal "Edad: ".$1."\n";
 	}
 }
 
-#Funcion que busca La universidad y la carrera en el dataset
+#Funcion que busca La universidad y la carrera en el dataset  #################################################################
 sub buscarEstudios {
 	$nom=$_[0];
 	if ($nom =~ /([eE]studi[oeé] |estudiante )([A-Za-záéíóÁÉÍÓÚS|.\s]+)*/) {
@@ -76,23 +58,50 @@ sub buscarEstudios {
 		}if($estudios=~/Ing ([A-Za-záéíóÁÉÍÓÚS\s]+)*/){
 			print sal "Carrera:  $1 \n"
 		}
-		#	print sal "NO SE ENCONTRO \n";
-		
 	} 
 }
 
-#función que busca el estado civil
-sub buscarEstadoCivil {
+
+sub buscarPeso {
+	$peso=$_[0];
+	#Encuentra los pesos en kilogramos
+	if ($peso =~ /([pP]eso |al rededor de |aproximadamente |mi peso es )([0-9]{2})+(kg| kg|kilogramos| kilogramos)*/){
+		print sal "Peso: ".$2." kilogramos\n";
+	}
+	#Encuentra las estaturas en libras y las convierte a kilogramos
+	if ($peso =~ /([pP]eso |al rededor de |aproximadamente |mi peso es )([0-9]{3})+(lb| lb|libras| libras)*/){
+		$datopeso = $2*(0.45);
+		print sal "Peso: ".$datopeso." kilogramos\n";
+	}	
+	#print "\n";	
+}
+
+sub buscarTelefono{
+	$telf=$_[0];
+	#Encuentra los telefonos en formato internacional
+	if ($telf =~ /([cC]elular al )([+][5][9][3][ ][0-9]{8})*/){
+		print sal "Telefono: ".$2."\n";
+	}
 	
-	$estadoCiv=$_[0];	if ($estadoCiv =~ /([Ss]oy |[Ee]stoy |[Mm]e encuentro )(solter[oa])/){
+	#Encuentra los telefonos celulares
+	if ($telf =~ /([cC]elular es |[cC]elular al |[cC]elular |[tT]el[ée]fono es |[tT]el[ée]fono |[tT]elef[óo]nico es el )([0-9]{10})*/){
+		print sal "Telefono: ".$2."\n";
+	}
+	
+	#Encuentra los telefonos fijos
+	if ($telf =~ /([tT]el[ée]fono es )([2-9]{7})*/){
+		print sal "Telefono: ".$2."\n";
+	}	}
+
+sub buscarEstadoCivil{
+	$estadoCiv=$_[0];
+	#Encuentra los estados civil
+	if ($estadoCiv =~ /([Ss]oy |[Ee]stoy |[Mm]e encuentro )(solter[oa])/){
 		print sal "Estado Civil: ".$2."\n";
 	}
 	if ($estadoCiv =~ /([Ss]oy |[Ee]stoy |[Mm]e encuentro )(casad[oa])/){
 		print sal "Estado Civil: ".$2."\n";
-	}
-}
-
-#funcion que busca la estatura sub buscaEstatura {
+	}	}sub buscarEstatura {
 	$estatura=$_[0];
 	#Encuentra las estaturas en metros
 	if ($estatura =~ /([mM]ido |[mM]i estatura es de |[mM]i estatura es |[mM]ido aproximadamente )([1]+\.)+([0-9]{2}|[0-9])+(m| m|metros| metros)*/){
@@ -107,19 +116,24 @@ sub buscarEstadoCivil {
 	if ($estatura =~ /([mM]ido |[mM]i estatura es de |[mM]i estatura es |[mM]ido aproximadamente )([0-9]{3})+(cm| cm|centimetros| centimetros)*/){
 		$datoestatura = $2/100;
 		print sal "Estatura: ".$datoestatura." metros\n";
-	}	}
-
-#funcion que busca el pesosub buscaPeso{
-	$peso=_[0];
-	#Encuentra los pesos en kilogramos
-	if ($peso =~ /([pP]eso |al rededor de |aproximadamente |mi peso es )([0-9]{2})+(kg| kg|kilogramos| kilogramos)*/){
-		print sal "Peso: ".$2." kilogramos\n";
+	}}
+sub buscarCiudadNatal {
+	$nom=$_[0];
+	if ($nom =~ /(nac[íi] (en|el|)|mi ciudad natal|lugar de nacimiento es (en|))([0-9A-Za-záéíóÁÉÍÓÚñ\.\s]+)*/) {
+		$nombre=$4;
+		
+		if($nombre=~/[Gg]uayaquil/){
+			print sal "Ciudad de Nacimiento: Guayaquil \n";
+		}elsif ($nombre=~/[Bb]abahoyo/){
+			print sal "Ciudad de Nacimiento: Babahoyo \n";
+		}elsif ($nombre=~/[Ll]oja/){
+			print sal "Ciudad de Nacimiento: Loja \n";
+		}elsif ($nombre=~/[Qq]uito/){
+			print sal "Ciudad de Nacimiento: Quito \n";
+		}elsif ($nombre=~/[Cc]uenca/){
+			print sal "Ciudad de Nacimiento: Cuenca \n";
+		}
+		
 	}
-	#Encuentra las estaturas en libras y las convierte a kilogramos
-	if ($peso =~ /([pP]eso |al rededor de |aproximadamente |mi peso es )([0-9]{3})+(lb| lb|libras| libras)*/){
-		$datopeso = $2*(0.45);
-		print sal "Peso: ".$datopeso." kilogramos\n";
-	}	
-	}
+}
 
-#funcion que busca el 
