@@ -14,6 +14,7 @@ open (sal,">salida.txt");
 			buscaNombre($inf);
 			buscaEdad($inf);
 			buscarEstudios($inf);
+			buscarMail($inf);
 			buscarEstatura($inf);
 			buscarPeso($inf);
 			buscarTelefono($inf);
@@ -47,7 +48,7 @@ sub buscaEdad {
 	}
 }
 
-#Funcion que busca La universidad y la carrera en el dataset  #################################################################
+#Funcion que busca La universidad y la carrera en el dataset  
 sub buscarEstudios {
 	$nom=$_[0];
 	if ($nom =~ /([eE]studi[oeé] |estudiante )([A-Za-záéíóÁÉÍÓÚS,.\s]+)*/) {
@@ -57,18 +58,18 @@ sub buscarEstudios {
 		if($estudios=~/([Ii]ngenier[íi]a|Ing\.)([A-Za-záéíóÁÉÍÓÚS\s]+)*/){
 			$carrera=$2;
 			if($carrera=~/([A-Za-záéíóÁÉÍÓÚS\s]+)*(en ESPOL|en la Escuela|en la ESPOL)/){
-				print sal "Carrera:  Ingeniería $1 \n"
+				print sal "Carrera: Ingeniería$1 \n"
 			}else{
-				print sal "Carrera:  Ingeniería $carrera \n"
+				print sal "Carrera: Ingeniería$carrera \n"
 			}
 			
 			
 		}elsif(/(carrera (es|de estudio|de))([A-Za-záéíóÁÉÍÓÚS\s]+)*/){
 			$carrera=$2;
 			if($carrera=~/([A-Za-záéíóÁÉÍÓÚS\s]+)*(en ESPOL|en la Escuela|en la ESPOL)/){
-				print sal "Carrera:  Ingeniería $1 \n"
+				print sal "Carrera: Ingeniería$1 \n"
 			}else{
-				print sal "Carrera:  $carrera \n"
+				print sal "Carrera: $carrera \n"
 			}
 		}elsif($estudios=~/[Ll]eyes/){
 			print sal "Carrera:  Leyes \n"
@@ -86,18 +87,21 @@ sub buscarEstudios {
 }
 
 
-sub buscarPeso {
-	$peso=$_[0];
-	#Encuentra los pesos en kilogramos
-	if ($peso =~ /([pP]eso |al rededor de |aproximadamente |mi peso es )([0-9]{2})+(kg| kg|kilogramos| kilogramos)*/){
-		print sal "Peso: ".$2." kilogramos\n";
+#Funcion que busca direcciones de correo electronico en el dataset 
+sub buscarMail {
+	$mail=$_[0];
+	if ($mail =~ /(([a-z0-9!#&'*+=?^_`{|}~-])+)*+@(([a-z]+\.)+([a-z]{2,6}|com|org|net|edu|gov|mil|biz|info|name|aero|asia|jobs|museum))/){
+		print sal "E-mail: ".$1."@".$3."\n";
 	}
-	#Encuentra las estaturas en libras y las convierte a kilogramos
-	if ($peso =~ /([pP]eso |al rededor de |aproximadamente |mi peso es )([0-9]{3})+(lb| lb|libras| libras)*/){
+}
+
+sub buscarPeso {
+	$peso=$_[0];	if ($peso =~ /([pP]eso |[pP]eso aproximadamente |[pP]eso alrededor de |mi peso es )([0-9][0-9][0-9])+([lL]b| [lL]b|[lL]ibras| [lL]ibras)*/){
 		$datopeso = $2*(0.45);
 		print sal "Peso: ".$datopeso." kilogramos\n";
-	}	
-	#print "\n";	
+	}elsif ($peso =~ /([pP]eso |[pP]eso aproximadamente |[pP]eso alrededor de |mi peso es )([0-9][0-9])([kK]g| [kK]g|[kK]ilogramos| [kK]ilogramos)*/){
+		print sal "Peso: ".$2." kilogramos\n";
+	}
 }
 
 sub buscarTelefono{

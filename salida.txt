@@ -1,22 +1,209 @@
 Nombre: Alejandro Benitez
+Edad: 28
+E-mail: abenitez@espol.edu.ec
+Estatura: 1.88 metros
+Peso: 85 kilogramos
+Telefono: +593 98688922
+Telefono: 
+Estado Civil: casado
+
+
 Nombre: Jorge
+Edad: 24
+Carrera: Ingeniería en Ciencias Computacionales especialización en Sistemas Multimedia 
+
+
 Nombre: Erick
+Edad: 24
+Carrera: Ingeniería en Sistemas Computacionales especialización Sistemas de Información 
+Universidad: ESPOL 
+E-mail: santiago_6@mail.com
+Estatura: 1.60 metros
+Peso: 55 kilogramos
+Telefono: 0991688888
+
+
 Nombre: Joe
-Nombre: Victor tengo 
+Edad: 23
+Carrera: Ingeniería Ciencias Computacionales tengo  
+E-mail: ure@espol.edu.ec
+Estatura: 1.69 metros
+Telefono: 0989786378
+
+
+Nombre: Victor 
+Edad: 24
+Carrera: Ingeniería en Ciencias Computacionales Orientación Tecnológico 
+Universidad: ESPOL 
+Ciudad de Nacimiento: Guayaquil 
+
+
 Nombre: Roberto
-Nombre: Ray tengo 
+Edad: 21
+Universidad: ESPOL 
+E-mail: tito_yc@hotmail.com
+Estatura: 1.70 metros
+Telefono: 0989572020
+
+
+Nombre: Ray 
+Edad: 21
+Carrera: Ingeniería en Ciencias Computacionales  
+Universidad: ESPOL 
+Estatura: 1.75 metros
+Peso: 70 kilogramos
+Telefono: 0123456789
+
+
 Nombre: Sara Ramirez
+Edad: 23
+Carrera: Ingeniería en Ciencias Computacionales  Especialización en Sistemas Multimedia 
+Universidad: ESPOL 
+E-mail: revrgq@hotmail.com
+Estatura: 1.59 metros
+Peso: 61 kilogramos
+Telefono: 0987902159
+Telefono: 
+
+
 Nombre: Leonardo
+Edad: 19
+Universidad: ESPOL 
+Telefono: 0927491232
+
+
 Nombre: Juan José García Cede
+Edad: 21
+Carrera: Ingeniería en Ciencias Computacionales 
+E-mail: fasddf@espol.edu.ec
+
+
 Nombre: José Luis
-Nombre: Dimitri nací el 
+Edad: 22
+Carrera: Ingeniería en Ciencias Computacionales especialización Sistemas Multimedia 
+Universidad: ESPOL 
+E-mail: jjluis@hotmail.com
+Estatura: 1.63 metros
+Peso: 65 kilogramos
+Telefono: 0987733337
+Ciudad de Nacimiento: Babahoyo 
+
+
+Edad: 28
+Carrera: Ingeniería en computación en la carrera de Sistemas de Multimedia 
+Universidad: ESPOL 
+E-mail: fabo2185@hotmail.com
+Estado Civil: soltero
+
+
+Nombre: Dimitri 
+Edad: 23
+Carrera: Ingeniería En Ciencias Computacionales Orientación Sistemas Multimedia 
+Universidad: ESPOL 
+E-mail: dlaaz_123@espol.edu.ec
+Telefono: 
+Telefono: 2242266
+Ciudad de Nacimiento: Guayaquil 
+
+
 Nombre: Cristian Pisco
+Edad: 20
+E-mail: crpisco@espol.edu.ec
+
+
 Nombre: Luis Eduardo
+Universidad: ESPOL 
+E-mail: luis@hotmail.com
+Estatura: 1.69 metros
+Peso: 63 kilogramos
+Telefono: 0999999999
+Telefono: 
+
+
 Nombre: Janna Barreto
+Edad: 21
+Carrera: Ingeniería en Ciencias Computacionales especialización Sistemas de Información 
+Universidad: ESPOL 
+Estatura: 1.60 metros
+Peso: 55 kilogramos
+
+
 Nombre: Ángel Guale
+Edad: 20
+Carrera: Ingeniería en Ciencias Computacionales especialización Sistemas Tecnológicos  
+Universidad: ESPOL 
+E-mail: xngelguale@espol.edu.ec
+
+
 Nombre: Javier
+Edad: 23
+Carrera: Ingeniería en Ciencias Computacionales  
+Universidad: ESPOL 
+E-mail: javierron1234@lol.com
+Estatura: 1.70 metros
+Telefono: 
+
+
 Nombre: Cindy
+Edad: 21
+Carrera: Ingeniería en Computación especialización Sistemas Multimedias  
+Universidad: ESPOL 
+
+
+Edad: 23
+Carrera: Ingeniería en Ciencias Computacionales 
+Universidad: ESPOL 
+E-mail: jacocam@hotmail.com
+Estatura: 1.59 metros
+Peso: 54 kilogramos
+Telefono: 0988888888
+Ciudad de Nacimiento: Loja 
+
+
 Nombre: Diego
+Edad: 23
+Carrera: Ingeniería en Ciencias Computacionales  
+Universidad: ESPOL 
+E-mail: lp_0790@hotmail.com
+Telefono: 0997031917
+Telefono: 
+
+
+Edad: 24
+Carrera: Ingeniería en Ciencias Computacionales 
+Universidad: ESPOL 
+E-mail: abcdef@gmail.com
+Estatura: 1.63 metros
+Telefono: 0998765432
+Ciudad de Nacimiento: Guayaquil 
+
+
 Nombre: Julio Realpe
+Edad: 20
+Carrera: Ingeniería en Ciencias Computacionales de la FIEC 
+E-mail: julio_realpe@espolo.edu.ec
+Telefono: 0934564354
+Telefono: 
+
+
 Nombre: Eddie Hurtado
+Edad: 22
+Carrera: Ingeniería en Computación  
+Universidad: ESPOL 
+E-mail: jashdka@espol.edu.ec
+Estatura: 1.61 metros
+Telefono: 0987777777
+Telefono: 
+
+
 Nombre: Marco Sanchez
+Edad: 23
+Carrera: Ingeniería en Ciencias Computacionales Orientación Sistemas de Información  
+Universidad: ESPOL 
+E-mail: msachez@espol.edu.ec
+Estatura: 1.67 metros
+Peso: 73 kilogramos
+Telefono: 0984348877
+Ciudad de Nacimiento: Guayaquil 
+
+
