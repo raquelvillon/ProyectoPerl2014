@@ -18,14 +18,14 @@ foreach $info(@parrafos){
  
 foreach $peso (@oraciones){
 	#Encuentra los pesos en kilogramos
-	if ($peso =~ /([pP]eso |al rededor de |aproximadamente |mi peso es )([0-9]{2})+(kg| kg|kilogramos| kilogramos)*/){
-		print sal "Peso: ".$2." kilogramos\n";
-	}
-	#Encuentra las estaturas en libras y las convierte a kilogramos
-	if ($peso =~ /([pP]eso |al rededor de |aproximadamente |mi peso es )([0-9]{3})+(lb| lb|libras| libras)*/){
+	if ($peso =~ /([pP]eso |[pP]eso aproximadamente |[pP]eso alrededor de |mi peso es )([0-9][0-9][0-9])+([lL]b| [lL]b|[lL]ibras| [lL]ibras)*/){
 		$datopeso = $2*(0.45);
 		print sal "Peso: ".$datopeso." kilogramos\n";
-	}	
+	}elsif ($peso =~ /([pP]eso |[pP]eso aproximadamente |[pP]eso alrededor de |mi peso es )([0-9][0-9])([kK]g| [kK]g|[kK]ilogramos| [kK]ilogramos)*/){
+		#$datopeso = $2;
+		print sal "Peso: ".$2." kilogramos\n";
+	}
+		
 	#print "\n";
 }     
 
