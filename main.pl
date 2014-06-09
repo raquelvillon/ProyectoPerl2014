@@ -3,7 +3,7 @@ use utf8; #permite que se compilen caracteres especiales como las vocales tildad
 use DBI;
 
 # connect
-my $dbh = DBI->connect("DBI:Pg:dbname=postgres;host=localhost", "postgres", "postgres", {'RaiseError' => 1});
+my $dbh = DBI->connect("DBI:Pg:dbname=postgres;host=localhost", "postgres", "postgre", {'RaiseError' => 1});
 
 open (datos,"<:encoding(UTF-8)","dataset.txt"); #hace que lea el txt tal y como esta escrito, incluidas los caracteres esperciales
 	@informacion=<datos>; #guarda cada linea dentro del arreglo "@informacion"
@@ -80,7 +80,7 @@ sub buscarEstudios {
 		
 		if($estudios=~/([Ii]ngenier[íi]a|Ing\.)([A-Za-záéíóÁÉÍÓÚS\s]+)*/){
 			$carrera=$2;
-			if($carrera=~/([A-Za-záéíóÁÉÍÓÚS\s]+)*(en ESPOL|en la Escuela|en la ESPOL)/){
+			if($carrera=~/([A-Za-záéíóÁÉÍÓÚS\s]+)*(en ESPOL|en la Escuela|en la ESPOL|tengo)/){
 				print sal "Carrera: Ingeniería$1 \n";
 				$datoCarrera="Ingeniería".$1;
 			}else{
@@ -91,7 +91,7 @@ sub buscarEstudios {
 			
 		}elsif(/(carrera (es|de estudio|de))([A-Za-záéíóÁÉÍÓÚS\s]+)*/){
 			$carrera=$2;
-			if($carrera=~/([A-Za-záéíóÁÉÍÓÚS\s]+)*(en ESPOL|en la Escuela|en la ESPOL)/){
+			if($carrera=~/([A-Za-záéíóÁÉÍÓÚS\s]+)*(en ESPOL|en la Escuela|en la ESPOL|tengo)/){
 				print sal "Carrera: Ingeniería".$1." \n";
 				$datoCarrera="Ingeniería".$1;
 			}else{
@@ -147,19 +147,9 @@ sub buscarPeso {
 	$telf=$_[0];
 	$datoTelf=" ";
 	#Encuentra los telefonos en formato internacional
-	if ($telf =~ /([cC]elular al )([+][5][9][3][ ][0-9]{8})*/){
+	if ($telf =~ /([cC]elular al |[tT]elef[óo]nico es el |[tT]el[ée]fono es |[tT]el[ée]fono |[cC]elular es |[cC]elular )+((([+][5][9][3][ ])([0-9]{8}))|[0-9]{10}|[0-9]{7})*/){
 		print sal "Telefono: ".$2."\n";
-		
-	}
-	
-	#Encuentra los telefonos celulares
-	if ($telf =~ /([cC]elular es |[cC]elular al |[cC]elular |[tT]el[ée]fono es |[tT]el[ée]fono |[tT]elef[óo]nico es el )([0-9]{10})*/){
-		print sal "Telefono: ".$2."\n";
-	}
-	
-	#Encuentra los telefonos fijos
-	if ($telf =~ /([tT]el[ée]fono es )([2-9]{7})*/){
-		print sal "Telefono: ".$2."\n";
+		$datoTelf = $2;
 	}
 	return($datoTelf);
 		}

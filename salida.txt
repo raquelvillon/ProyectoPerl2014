@@ -4,7 +4,6 @@ E-mail: abenitez@espol.edu.ec
 Estatura: 1.88 metros
 Peso: 85 kilogramos
 Telefono: +593 98688922
-Telefono: 
 Estado Civil: casado
 
 
@@ -25,7 +24,7 @@ Telefono: 0991688888
 
 Nombre: Joe
 Edad: 23
-Carrera: Ingeniería Ciencias Computacionales tengo  
+Carrera: Ingeniería Ciencias Computacionales  
 E-mail: ure@espol.edu.ec
 Estatura: 1.69 metros
 Telefono: 0989786378
@@ -63,7 +62,6 @@ E-mail: revrgq@hotmail.com
 Estatura: 1.59 metros
 Peso: 61 kilogramos
 Telefono: 0987902159
-Telefono: 
 
 
 Nombre: Leonardo
@@ -101,7 +99,6 @@ Edad: 23
 Carrera: Ingeniería En Ciencias Computacionales Orientación Sistemas Multimedia 
 Universidad: ESPOL 
 E-mail: dlaaz_123@espol.edu.ec
-Telefono: 
 Telefono: 2242266
 Ciudad de Nacimiento: Guayaquil 
 
@@ -117,7 +114,6 @@ E-mail: luis@hotmail.com
 Estatura: 1.69 metros
 Peso: 63 kilogramos
 Telefono: 0999999999
-Telefono: 
 
 
 Nombre: Janna Barreto
@@ -166,7 +162,6 @@ Carrera: Ingeniería en Ciencias Computacionales
 Universidad: ESPOL 
 E-mail: lp_0790@hotmail.com
 Telefono: 0997031917
-Telefono: 
 
 
 Edad: 24
@@ -183,7 +178,6 @@ Edad: 20
 Carrera: Ingeniería en Ciencias Computacionales de la FIEC 
 E-mail: julio_realpe@espolo.edu.ec
 Telefono: 0934564354
-Telefono: 
 
 
 Nombre: Eddie Hurtado
@@ -193,7 +187,6 @@ Universidad: ESPOL
 E-mail: jashdka@espol.edu.ec
 Estatura: 1.61 metros
 Telefono: 0987777777
-Telefono: 
 
 
 Nombre: Marco Sanchez
