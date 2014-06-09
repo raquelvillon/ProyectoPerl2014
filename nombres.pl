@@ -14,7 +14,7 @@ open (sal,">salida.txt");
 		
 			
 			buscaNombre($inf);
-			buscaCiudadNatal($inf);
+			buscarEstudios($inf);
 			#buscaEdad($oracion);
 			#print sal "$oracion\n";
 			
@@ -26,27 +26,9 @@ open (sal,">salida.txt");
 		print sal "\n\n";
 		undef(@oraciones);
 	}
-}
+	}
 close (sal);
 
-sub buscaCiudadNatal {
-	if ($nom =~ /(nac[íi] (en|el|)|mi ciudad natal|lugar de nacimiento es (en|))([0-9A-Za-záéíóÁÉÍÓÚñ\.\s]+)*/) {
-		$nombre=$4;
-		print sal "Ciudad de Nacimiento: ".$4."\n";
-		if($nombre=~/[Gg]uayaquil/){
-			print sal "Ciudad: Guayaquil \n";
-		}elsif ($nombre=~/[Bb]abahoyo/){
-			print sal "Ciudad: Babahoyo \n";
-		}elsif ($nombre=~/[Ll]oja/){
-			print sal "Ciudad: Loja \n";
-		}elsif ($nombre=~/[Qq]uito/){
-			print sal "Ciudad: Quito \n";
-		}elsif ($nombre=~/[Cc]uenca/){
-			print sal "Ciudad: Quito \n";
-		}
-		
-	}
-}
 
 sub buscaNombre {
 	$nom=$_[0];
@@ -64,15 +46,37 @@ sub buscaNombre {
 
 sub buscarEstudios {
 	$nom=$_[0];
-	if ($nom =~ /([eE]studi[oeé] |estudiante )([A-Za-záéíóÁÉÍÓÚS|.\s]+)*/) {
+	if ($nom =~ /([eE]studi[oeé] |estudiante )([A-Za-záéíóÁÉÍÓÚS,.\s]+)*/) {
 		$estudios=$2;
-		print sal $2."\n";
+		#print sal $2."\n";
+		
+		if($estudios=~/([Ii]ngenier[íi]a|Ing\.)([A-Za-záéíóÁÉÍÓÚS\s]+)*/){
+			$carrera=$2;
+			if($carrera=~/([A-Za-záéíóÁÉÍÓÚS\s]+)*(en ESPOL|en la Escuela|en la ESPOL)/){
+				print sal "Carrera:  Ingeniería $1 \n"
+			}else{
+				print sal "Carrera:  Ingeniería $carrera \n"
+			}
+			
+			
+		}elsif(/(carrera (es|de estudio|de))([A-Za-záéíóÁÉÍÓÚS\s]+)*/){
+			$carrera=$2;
+			if($carrera=~/([A-Za-záéíóÁÉÍÓÚS\s]+)*(en ESPOL|en la Escuela|en la ESPOL)/){
+				print sal "Carrera:  Ingeniería $1 \n"
+			}else{
+				print sal "Carrera:  $carrera \n"
+			}
+		}elsif($estudios=~/[Ll]eyes/){
+			print sal "Carrera:  Leyes \n"
+		}
 		if($estudios=~/([Ee][Ss][Pp][Oo][Ll]|Escuela)/){
 			print sal "Universidad: ESPOL \n"
-		}if($estudios=~/Ing ([A-Za-záéíóÁÉÍÓÚS\s]+)*/){
-			print sal "Carrera:  $1 \n"
+		}elsif($estudios=~/([Cc][Aa][Tt][Oo][Ll][Ii][Cc][Aa]|[Uu][Cc][Ss][Gg])/){
+			print sal "Universidad: Católica \n"
+		}elsif($estudios=~/([Ee]statal|[Uu]niversidad de [Gg]uayaquil)/){
+			print sal "Universidad: Estatal \n"
 		}
-		#	print sal "NO SE ENCONTRO \n";
+
 		
 	} 
 }

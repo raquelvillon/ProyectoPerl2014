@@ -50,15 +50,39 @@ sub buscaEdad {
 #Funcion que busca La universidad y la carrera en el dataset  #################################################################
 sub buscarEstudios {
 	$nom=$_[0];
-	if ($nom =~ /([eE]studi[oeé] |estudiante )([A-Za-záéíóÁÉÍÓÚS|.\s]+)*/) {
+	if ($nom =~ /([eE]studi[oeé] |estudiante )([A-Za-záéíóÁÉÍÓÚS,.\s]+)*/) {
 		$estudios=$2;
-		print sal $2."\n";
+		#print sal $2."\n";
+		
+		if($estudios=~/([Ii]ngenier[íi]a|Ing\.)([A-Za-záéíóÁÉÍÓÚS\s]+)*/){
+			$carrera=$2;
+			if($carrera=~/([A-Za-záéíóÁÉÍÓÚS\s]+)*(en ESPOL|en la Escuela|en la ESPOL)/){
+				print sal "Carrera:  Ingeniería $1 \n"
+			}else{
+				print sal "Carrera:  Ingeniería $carrera \n"
+			}
+			
+			
+		}elsif(/(carrera (es|de estudio|de))([A-Za-záéíóÁÉÍÓÚS\s]+)*/){
+			$carrera=$2;
+			if($carrera=~/([A-Za-záéíóÁÉÍÓÚS\s]+)*(en ESPOL|en la Escuela|en la ESPOL)/){
+				print sal "Carrera:  Ingeniería $1 \n"
+			}else{
+				print sal "Carrera:  $carrera \n"
+			}
+		}elsif($estudios=~/[Ll]eyes/){
+			print sal "Carrera:  Leyes \n"
+		}
 		if($estudios=~/([Ee][Ss][Pp][Oo][Ll]|Escuela)/){
 			print sal "Universidad: ESPOL \n"
-		}if($estudios=~/Ing ([A-Za-záéíóÁÉÍÓÚS\s]+)*/){
-			print sal "Carrera:  $1 \n"
+		}elsif($estudios=~/([Cc][Aa][Tt][Oo][Ll][Ii][Cc][Aa]|[Uu][Cc][Ss][Gg])/){
+			print sal "Universidad: Católica \n"
+		}elsif($estudios=~/([Ee]statal|[Uu]niversidad de [Gg]uayaquil)/){
+			print sal "Universidad: Estatal \n"
 		}
-	} 
+
+		
+	}
 }
 
 
