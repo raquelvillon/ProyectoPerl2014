@@ -1,0 +1,52 @@
+
+
+Nombre:  Juan Pérez
+
+
+Nombre:  Elizabeth Baja
+Edad: 30
+Estado Civil: casada
+
+
+
+
+Nombre: Ross Lynch
+
+
+Nombre: Luis Xavier Ruilova Gonzales
+
+
+Nombre:  Silvia Zarate
+Estatura: 1.65 metros
+Peso: 66 kilogramos
+Estado Civil: casada
+
+
+Nombre: Jaume Navas
+Edad: 29
+E-mail: jaume@jaumenavas.es
+
+
+Nombre:  Juan León
+
+
+Nombre: Juan Perez
+Edad: 17
+Universidad: ESPOL 
+E-mail: asdf@hotmail.com
+Estatura: 1.70 metros
+Peso: 84 kilogramos
+Telefono: 
+
+
+Nombre: do Tangamandapio
+
+
+Nombre: jugador profesional desde los 
+Edad: 26
+Estatura: 1.69 metros
+
+
+Nombre: estudiante de veterinaria
+
+

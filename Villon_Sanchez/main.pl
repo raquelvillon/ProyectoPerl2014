@@ -3,18 +3,18 @@ use utf8; #permite que se compilen caracteres especiales como las vocales tildad
 use DBI;
 
 # connect
-my $dbh = DBI->connect("DBI:Pg:dbname=postgres;host=localhost", "postgres", "postgre", {'RaiseError' => 1});
+my $dbh = DBI->connect("DBI:Pg:dbname=postgres;host=localhost", "postgres", "postgres", {'RaiseError' => 1});
 
-open (datos,"<:encoding(UTF-8)","dataset.txt"); #hace que lea el txt tal y como esta escrito, incluidas los caracteres esperciales
+open (datos,"<:encoding(UTF-8)","dataset2.txt"); #hace que lea el txt tal y como esta escrito, incluidas los caracteres esperciales
 	@informacion=<datos>; #guarda cada linea dentro del arreglo "@informacion"
 close (datos);
 
 
 #todos los resultados se imprimirán aquí 
-open (sal,">salida.txt");
+open (sal,">salida2.txt");
 
-$dbh->do("drop table estudiantes");
-$dbh->do("CREATE TABLE estudiantes (id INTEGER, nombre VARCHAR(50), edad VARCHAR(20), estatura VARCHAR(20), peso VARCHAR(20), correo VARCHAR(50), lugarnacimiento VARCHAR(15), estadocivil VARCHAR(20), telefono VARCHAR(15),  universidad VARCHAR(50), carrera VARCHAR(100));");
+#$dbh->do("drop table estudiantes");
+#$dbh->do("CREATE TABLE estudiantes (id INTEGER, nombre VARCHAR(50), edad VARCHAR(20), estatura VARCHAR(20), peso VARCHAR(20), correo VARCHAR(50), lugarnacimiento VARCHAR(15), estadocivil VARCHAR(20), telefono VARCHAR(15),  universidad VARCHAR(50), carrera VARCHAR(100));");
 $i=0;
 	#guarda solo las lineas que tienen texto, se salta las lineas en blanco
 	foreach $inf(@informacion){
@@ -33,7 +33,7 @@ $i=0;
 			$phone=buscarTelefono($inf);
 			$status=buscarEstadoCivil($inf);
 			$city=buscarCiudadNatal($inf);
-			my $rows = $dbh->do("INSERT INTO estudiantes (id,nombre,edad,estatura,peso,correo,lugarnacimiento,estadocivil,telefono,universidad,carrera) VALUES ($i,'$name','$age','$height','$weight','$email','$city','$status','$phone','$university','$carreer')");
+			#my $rows = $dbh->do("INSERT INTO estudiantes (id,nombre,edad,estatura,peso,correo,lugarnacimiento,estadocivil,telefono,universidad,carrera) VALUES ($i,'$name','$age','$height','$weight','$email','$city','$status','$phone','$university','$carreer')");
 			print sal "\n\n";
 	}
 	}
@@ -44,7 +44,7 @@ $dbh->disconnect();
 sub buscaNombre {
 	$nom=$_[0];
 	$datoNom=" ";
-	if ($nom =~ /(nombre es |llamo )([A-Za-záéíóÁÉÍÓÚ\s]+)*/) {
+	if ($nom =~ /(nombre es |[Ll]lam[aoó]|[Ss]oy )([A-Za-záéíóÁÉÍÓÚ\s]+)*/) {
 		$nombre=$2;
 		if($nombre=~/([A-Za-záéíóúÁÉÍÓÚS\s]+)*(tengo|nac[íi])/){
 		print sal "Nombre: ".$1."\n";
